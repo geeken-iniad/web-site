@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 # Emacs backup files for Tarutyyyne
 *~
+./.github/workflows/*~
+#*#
