@@ -1,22 +1,75 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-//microCMS呼び出し
+// microCMS呼び出し
 import { getBlogs } from "../library/microcms";
 const response = await getBlogs({ fields: ["id", "title"] });
 ---
 
 <Layout title="GeeKEN Website">
-  <main>
-    <ul>
-      {
-        response.contents.map((content: any) => (
-          <li>
-            <a href={content.id}>{content.title}</a>
-          </li>
-        ))
-      }
-    </ul>
+  <header class="site-header">
+    <div class="site-title">情報技術メディア研究会</div>
+  </header>
+  <main class="hero">
+    <section>
+      <h2>技術で遊び、みんなで笑う</h2>
+      <p>
+	情報技術メディア研究会(INIAD GeeKEN)は
+	東洋大学情報連携学部 公認サークルです
+      </p>
+    </section>
+
+    <section>
+      <h2>活動理念</h2>
+      <p>
+	
+      </p>
+    </section>
+
+    <section>
+      <h2>活動内容</h2>
+      <ul>
+	<li>ゼミ(勉強会)</li>
+	<li>IT企業への見学</li>
+	<li>ハッカソンへ参加</li>
+	<li>技術書店への出典</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>GeeKEN BLOG</h2>
+        <ul>
+	  {
+            response.contents.map((content: any) => (
+              <li>
+		<a href={content.id}>{content.title}</a>
+              </li>
+            ))
+	  }
+	</ul>
+    </section>
+
+    <section>
+      <h2>About</h2>
+
+	<p>
+	  SNS・連絡先
+	</p>
+	<ul>
+	  <li>
+	    <a href="https://x.com/iniad_geeken" target="_blank" rel="noopener">
+	    <img src="/icons/x.svg" alt="X (Twitter)" />
+	  </li>
+	  <li>
+	    <a href="mailto:geeken-iniad@protonmail.com" target="_blank" rel="noopener">
+	    <img src="/icons/mail.svg" alt="Mail" />
+	  </li>
+	  <li>
+	    <a href="https://github.com/geeken-iniad" target="_blank" rel="noopener">
+	    <img src="/icons/github.svg" alt="GitHub" />
+	  </li>
+	</ul>
+    </section>
   </main>
 </Layout>
 
