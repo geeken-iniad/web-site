@@ -1,46 +1,70 @@
-# Astro Starter Kit: Basics
+# GeeKEN Web Site
 
-```sh
-pnpm create astro@latest -- --template basics
+## 注意
+- 本 README は、正式リリース前の開発者向けに作業指針をまとめた臨時的なドキュメントです
+
+## 状態
+- 開発中 (正式リリース前)
+- 情報構造の設計中
+
+## Git / GitHub の操作について
+### 基本方針
+- Git のブランチ運用については GitHub Flow を採用
+- main ブランチは、常にデプロイ可能な状態を保つ
+- 機能追加や修正は、原則として作業用ブランチで行う
+- 作業用ブランチは、機能単位または issue 単位で作成する
+
+### 開発の基本フロー
+- 作業を始める前に、必ず main ブランチを最新の状態に
+
+```
+git checkout main
+git pull origin main
+
+git checkout <自分の機能ブランチ>
+git merge main
+
+git add <ステージしたいファイル>
+git commit -m <コミットメッセージ>
+git push origin <自分の機能ブランチ>
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- push 後、GitHub 上で Pull Request を作成
+- PR については、作成者自身がマージを行ってもよいものとする
 
-## 🚀 Project Structure
+## 技術スタック
+- Astro
+- Tailwind CSS
+- microCMS
+- GitHub Pages
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## 1. 概要
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+本サイトは、INIAD GeeKEN サークルの活動内容や理念を
+学内外に向けて発信するための公式 Web サイトである
 
-## 🧞 Commands
+主な閲覧者として新入生を想定しつつ、
+外部の技術系サークル関係者や企業担当者による閲覧も考慮する
 
-All commands are run from the root of the project, from a terminal:
+## 2. サイトの目的と方針
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+- サークルの雰囲気や活動内容を直感的に伝えること
 
-## 👀 Want to learn more?
+一方で、
+- 詳細な活動記録や技術解説はブログに委ねる
+- トップページに過剰な情報は掲載しない
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 3. 想定利用者
+
+- 主対象 : 新入生 (スマートフォンから閲覧を想定)
+- 副対象 : 学外からの閲覧者 (PC からの閲覧を想定)
+
+## 4. ページ構成と役割
+
+- トップページ：サークルの第一印象を伝える
+- About：活動理念・概要の説明
+- Activities：活動内容の紹介
+- Blog：記事・Tips・活動報告
+- Contact: X(Twitter), Mail, GitHub
