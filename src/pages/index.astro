@@ -7,19 +7,16 @@ const response = await getBlogs({ fields: ["id", "title"] });
 ---
 
 <Layout title="GeeKEN Website">
-  <header class="site-header">
-    <div class="site-title">情報技術メディア研究会</div>
-  </header>
   <main class="hero">
-    <section>
-      <h2>サイト工事中 (仮)</h2>
+    <section id="catchphrase">
+      <h2>"やってみたい"をみんなで叶える</h2>
       <p>
 	情報技術メディア研究会(INIAD GeeKEN)は
 	東洋大学情報連携学部 公認サークルです
       </p>
     </section>
 
-    <section>
+    <section id="philosophy">
       <h2>活動理念</h2>
       <p>
 	ITやコンピュータサイエンスは難しそうで、
@@ -30,11 +27,11 @@ const response = await getBlogs({ fields: ["id", "title"] });
 	少し詳しい人も、これから始めたい人も、
 	ギークの卵同士が出会い、学びあい、
 	「面白い」が連鎖していくー
-	そんな空間を目指しています。
+	そんな空間を目指しています !
       </p>
     </section>
 
-    <section>
+    <section id="activities">
       <h2>活動内容</h2>
       <ul>
 	<li>ゼミ(勉強会)</li>
@@ -44,7 +41,7 @@ const response = await getBlogs({ fields: ["id", "title"] });
       </ul>
     </section>
 
-    <section>
+    <section id="blog">
       <h2>GeeKEN BLOG</h2>
         <ul>
 	  {
@@ -57,7 +54,7 @@ const response = await getBlogs({ fields: ["id", "title"] });
 	</ul>
     </section>
 
-    <section>
+    <section id="about">
       <h2>About</h2>
 
 	<p>
@@ -83,8 +80,14 @@ const response = await getBlogs({ fields: ["id", "title"] });
 
 <style>
   main {
-    margin: auto;
-    padding: 1em;
-    max-width: 60ch;
+    height: 100svh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+  
+  section {
+    min-height: 100svh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 </style>
