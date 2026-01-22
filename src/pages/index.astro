@@ -7,93 +7,91 @@ const response = await getBlogs({ fields: ["id", "title"] });
 ---
 
 <Layout title="GeeKEN Website">
-  <main class="hero">
-    <section id="catchphrase">
-      <h2>"やってみたい"をみんなで叶える</h2>
-      <p>
-	情報技術メディア研究会(INIAD GeeKEN)は
-	東洋大学情報連携学部 公認サークルです
-      </p>
+  <main class="h-svh overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+    <section id="catchphrase" class="hero min-h-svh bg-base-200 snap-start">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h2 class="text-5xl font-bold mb-8">
+            "やってみたい"<br />をみんなで叶える
+          </h2>
+          <p class="py-6 text-xl">
+            情報技術メディア研究会(INIAD GeeKEN)は<br />
+            東洋大学情報連携学部 公認サークルです
+          </p>
+          <button class="btn btn-primary">詳しく見る</button>
+        </div>
+      </div>
     </section>
 
-    <section id="philosophy">
-      <h2>活動理念</h2>
-      <p>
-	ITやコンピュータサイエンスは難しそうで、
-	一人で学び続けるには高い壁のある分野です
-        GeeKENは、その「最初の壁」を一緒に越えるための場所です。
-      </p>
-      <p>
-	少し詳しい人も、これから始めたい人も、
-	ギークの卵同士が出会い、学びあい、
-	「面白い」が連鎖していくー
-	そんな空間を目指しています !
-      </p>
+    <section id="philosophy" class="hero min-h-svh bg-base-100 snap-start">
+      <div class="hero-content text-center flex-col">
+        <h2 class="text-4xl font-bold text-secondary mb-4">活動理念</h2>
+        <p class="text-lg max-w-2xl">
+          ITやコンピュータサイエンスは難しそうで、<br />
+          一人で学び続けるには高い壁のある分野です。<br /><br />
+          GeeKENは、その「最初の壁」を一緒に越えるための場所です。<br />
+          少し詳しい人も、これから始めたい人も、<br />
+          ギークの卵同士が出会い、学びあい、<br />
+          「面白い」が連鎖していくー そんな空間を目指しています！
+        </p>
+      </div>
     </section>
 
-    <section id="activities">
-      <h2>活動内容</h2>
-      <ul>
-	<li>ゼミ(勉強会)</li>
-	<li>IT企業への見学</li>
-	<li>ハッカソンへ参加</li>
-	<li>技術書店への出典</li>
-      </ul>
+    <section id="activities" class="hero min-h-svh bg-base-200 snap-start">
+      <div class="hero-content flex-col">
+        <h2 class="text-4xl font-bold text-accent mb-8">活動内容</h2>
+        <ul class="steps steps-vertical lg:steps-horizontal">
+          <li class="step step-primary">ゼミ(勉強会)</li>
+          <li class="step step-primary">IT企業見学</li>
+          <li class="step step-primary">ハッカソン参加</li>
+          <li class="step step-primary">技術書典へ出展</li>
+        </ul>
+      </div>
     </section>
 
-    <section id="blog">
-      <h2>GeeKEN BLOG</h2>
-        <ul>
-	  {
-            response.contents.map((content: any) => (
-              <li>
-		<a href={content.id}>{content.title}</a>
-              </li>
-            ))
-	  }
-	</ul>
+    <section id="blog" class="hero min-h-svh bg-base-100 snap-start">
+      <div class="hero-content flex-col w-full">
+        <h2 class="text-4xl font-bold text-primary mb-8">GeeKEN BLOG</h2>
+        <div class="w-full max-w-xl">
+          <ul class="menu bg-base-200 w-full rounded-box">
+            {
+              response.contents.map((content: any) => (
+                <li>
+                  <a href={content.id} class="text-lg hover:text-primary">
+                    {content.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-	<p>
-	  SNS・連絡先
-	</p>
-	<ul>
-	  <li>
-	    <a href="https://x.com/iniad_geeken" target="_blank" rel="noopener">
-	      <img src="/icons/x.svg" alt="X (Twitter)" />
-	    </a>
-	  </li>
-	  <li>
-	    <a href="mailto:geeken-iniad@protonmail.com" target="_blank" rel="noopener">
-	      <img src="/icons/mail.svg" alt="Mail" />
-	    </a>
-	  </li>
-	  <li>
-	    <a href="https://github.com/geeken-iniad" target="_blank" rel="noopener">
-	      <img src="/icons/github.svg" alt="GitHub" />
-	    </a>
-	  </li>
-	</ul>
+    <section
+      id="about"
+      class="hero min-h-svh bg-neutral text-neutral-content snap-start"
+    >
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h2 class="text-3xl font-bold mb-6">About</h2>
+          <p class="mb-4">SNS・連絡先</p>
+          <div class="flex justify-center gap-6">
+            <a
+              href="https://x.com/iniad_geeken"
+              class="btn btn-circle btn-ghost text-2xl">X</a
+            >
+            <a
+              href="mailto:geeken-iniad@protonmail.com"
+              class="btn btn-circle btn-ghost text-2xl">✉</a
+            >
+            <a
+              href="https://github.com/geeken-iniad"
+              class="btn btn-circle btn-ghost text-2xl">Git</a
+            >
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
-
-<style>
-  main {
-    height: 100svh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
-
-  body {
-    margin: 0;
-  }
-  
-  section {
-    min-height: 100svh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-</style>
