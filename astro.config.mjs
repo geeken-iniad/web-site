@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config';
-
-import tailwindcss from "@tailwindcss/vite";
-
+import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
 export default defineConfig({
@@ -24,9 +22,13 @@ export default defineConfig({
     },
   },
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+  // Astroの統合機能に一度任せるため
+  // vite: {
+  //   plugins: [tailwindcss()],
+  // },
 
-  integrations: [react()],
+  integrations: [
+    react(),
+    tailwind(),
+  ],
 });
