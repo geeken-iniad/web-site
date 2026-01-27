@@ -48,19 +48,22 @@ const response = await getBlogs({ fields: ["id", "title"] });
       </div>
     </section>
 
-    <section id="philosophy" class="hero min-h-svh bg-base-100 snap-start">
+    <section id="philosophy" class="hero min-h-svh bg-[rgba(2,91,195,0.85)] snap-start">
       <div class="hero-content text-center flex-col">
-        <h2 class="text-4xl font-bold text-secondary mb-4">活動理念</h2>
-        <p class="text-lg max-w-2xl">
-          ITやコンピュータサイエンスは難しそうで、<br />
-          一人で学び続けるには高い壁のある分野です。<br /><br />
-          GeeKENは、その「最初の壁」を一緒に越えるための場所です。<br />
-          少し詳しい人も、これから始めたい人も、<br />
-          ギークの卵同士が出会い、学びあい、<br />
-          「面白い」が連鎖していくー そんな空間を目指しています！
-        </p>
+	<div class="max-w-3xl rounded-2xl px-8 py-10 bg-[rgba(0,16,39,0.22)] backdrop-blur-sm">
+	  <h2 class="text-4xl font-bold text-white mb-4 tracking-wide">活動理念</h2>
+	  <p class="text-lg max-w-2xl mx-auto leading-8 text-[rgba(248,250,255,0.92)]">
+            ITやコンピュータサイエンスは難しそうで、<br />
+            一人で学び続けるには高い壁のある分野です。<br /><br />
+            <span class="font-semibold text-white">GeeKEN</span>は、その「<span class="font-semibold text-white">最初の壁</span>」を一緒に越えるための場所です。<br />
+            少し詳しい人も、これから始めたい人も、<br />
+            ギークの卵同士が出会い、学びあい、<br />
+            「面白い」が連鎖していく— そんな空間を目指しています！
+	  </p>
+	</div>
       </div>
     </section>
+
 
     <section id="activities" class="hero min-h-svh bg-base-200 snap-start">
       <div class="hero-content flex-col">
