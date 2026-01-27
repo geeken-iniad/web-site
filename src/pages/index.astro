@@ -8,17 +8,42 @@ const response = await getBlogs({ fields: ["id", "title"] });
 
 <Layout title="GeeKEN Website">
   <main class="h-svh overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-    <section id="catchphrase" class="hero min-h-svh bg-base-200 snap-start">
+    <section id="catchphrase" class="hero min-h-svh bg-[#1E2E47] snap-start">
+      {/* Grid overlay */}
+      <div
+	class="pointer-events-none absolute inset-0 opacity-100 [background-image:linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:40px_40px]"
+      ></div>
       <div class="hero-content text-center">
         <div class="max-w-md">
-          <h2 class="text-5xl font-bold mb-8">
+          <h2 class="text-5xl text-white font-bold mb-8">
             "やってみたい"<br />をみんなで叶える
           </h2>
-          <p class="py-6 text-xl">
+          <p class="py-6 text-xl text-gray-300">
             情報技術メディア研究会(INIAD GeeKEN)は<br />
             東洋大学情報連携学部 公認サークルです
           </p>
-          <button class="btn btn-primary">詳しく見る</button>
+          <a
+            href="#philosophy"
+	    class="btn btn-circle mt-10 animate-bounce border-0 shadow-lg"
+	    style="background:#025BC3; color:#fff;"
+	    aria-label="次のセクションへ"
+	  >
+	    {/* chevron-down */}
+	    <svg
+	      xmlns="http://www.w3.org/2000/svg"
+	      viewBox="0 0 24 24"
+	      fill="none"
+	      stroke="currentColor"
+	      stroke-width="2"
+	      stroke-linecap="round"
+	      stroke-linejoin="round"
+	      class="w-6 h-6"
+	      aria-hidden="true"
+	    >
+	      <path d="M6 9l6 6 6-6" />
+	    </svg>
+	  </a>
+
         </div>
       </div>
     </section>
