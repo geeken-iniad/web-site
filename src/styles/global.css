@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Makinas';
+  src: url('/fonts/Makinas-4-Flat.otf') format('opentype');
+  font-display: swap;
+}
