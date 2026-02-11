@@ -1,0 +1,56 @@
+<section
+  id="catchphrase"
+  class="relative hero min-h-svh bg-[#0a192f] snap-start overflow-hidden flex items-center justify-center"
+>
+  <!-- 1. Grid Pattern Background -->
+  <!-- 白い線を薄く引き、テック感を出す -->
+  <div
+    class="pointer-events-none absolute inset-0 opacity-20"
+    style="background-image: linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px); background-size: 40px 40px;"
+  >
+  </div>
+
+  <!-- 2. Radial Gradient Overlay -->
+  <!-- 画面下部に向かって暗くし、コンテンツを浮き上がらせる -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#0a192f]/60 to-[#0a192f]"
+  >
+  </div>
+
+  <div class="hero-content text-center relative z-10 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2
+        class="text-5xl md:text-7xl text-white font-bold mb-8 leading-tight tracking-tight drop-shadow-lg"
+      >
+        <!-- アクセントカラーで強調 -->
+        <span class="text-blue-400 inline-block">"やってみたい"</span><br />
+        をみんなで叶える
+      </h2>
+
+      <p class="py-6 text-lg md:text-xl text-slate-300 leading-relaxed font-light">
+        情報技術メディア研究会 (INIAD GeeKEN) は<br class="hidden md:inline" />
+        東洋大学情報連携学部 公認サークルです
+      </p>
+
+      <a
+        href="#mission"
+        class="btn btn-circle btn-lg mt-12 animate-bounce border-0 shadow-lg shadow-blue-900/50 hover:bg-blue-500 transition-all duration-300"
+        style="background:#025BC3; color:#fff;"
+        aria-label="Missionセクションへスクロール"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-8 h-8"
+        >
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
