@@ -1,0 +1,82 @@
+<!-- ---
+interface Props {
+  contents: { id: string; title: string }[];
+}
+
+const { contents } = Astro.props;
+---
+
+<section id="blog" class="hero min-h-svh bg-base-100 snap-start">
+  <div class="hero-content flex-col w-full">
+    <h2 class="text-4xl font-bold text-primary mb-8">GeeKEN BLOG</h2>
+    <div class="w-full max-w-xl">
+      <ul class="menu bg-base-200 w-full rounded-box">
+        {
+          contents.map((content) => (
+            <li>
+              <a href={content.id} class="text-lg hover:text-primary">
+                {content.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section> -->
+
+---
+// src/components/Blog.astro
+
+// 1. データファイルから外部記事のリストを読み込む
+import { externalArticles } from '../articles/articles';
+---
+
+<section id="blog" class="py-12 bg-base-200">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <h2 class="text-3xl font-bold text-primary mb-8 text-center">Articles</h2>
+    
+    {/* PCでは2列、スマホでは1列になるグリッド */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        externalArticles.map((article) => (
+          // カード全体をリンクにする
+          <a 
+            href={article.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="card bg-base-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-base-300"
+          >
+            <div class="card-body">
+              <div class="flex items-center justify-between mb-2">
+                {/* 著者名（author）を表示 */}
+                <span class="text-sm font-medium text-base-content/80 flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  {article.author}
+                </span>
+                
+                {/* 公開日を表示 */}
+                <span class="text-xs text-base-content/70">
+                  {article.publishedAt}
+                </span>
+              </div>
+              
+              {/* 記事のタイトル */}
+              <h3 class="card-title text-lg leading-snug mt-1">
+                {article.title}
+              </h3>
+              
+              {/* 右下の「記事を読む」エリア */}
+              <div class="card-actions justify-end mt-4">
+                <span class="text-sm text-primary flex items-center gap-1 font-semibold">
+                  記事を読む
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
