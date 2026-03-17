@@ -5,11 +5,9 @@ import Catchphrase from "../components/Catchphrase.astro";
 import Mission from "../components/Mission.astro";
 import Activities from "../components/Activities.astro";
 import Faq from "../components/Faq.astro";
+import Blogs from "../components/Blogs.astro";
 import Contact from "../components/Contact.astro";
 
-// microCMS呼び出し
-import { getBlogs } from "../library/microcms";
-const response = await getBlogs({ fields: ["id", "title"] });
 const qaItems = [
   {
     q: "サークル費などはかかりますか？",
@@ -46,6 +44,7 @@ const qaItems = [
     <Catchphrase /> 
     <Mission />
     <Activities />
+    <Blogs />
     <Faq qaItems={qaItems} />
     <Contact />
   </main>
