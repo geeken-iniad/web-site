@@ -13,7 +13,7 @@ export const externalArticles: Article[] = [
   {
     id: "01",
     title: "【INIAD10期生へ】1年生向けINIAD取説",
-    author: "無生物",
+    author: "音㦡とめどれー",
     url: "https://note.com/med0/n/n466efa54b0fe",
     publishedAt: "2026-03-17",
   },
